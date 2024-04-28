@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce - Tu tienda online</title>
+    <link rel="stylesheet" href="./utils/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="./utils/js/script.js"></script>
+  </head>
+  <body>
+    <header class="contenedor">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Ecommerce</a>
+        </div>
+      </nav>
+    </header>
+    <main class="contenedor">
+      <div class="container-fluid" id="contenedorCentrado">
+        <h2>¡Tu tienda Online de confianza!</h2>
+        <div class="row containerMain">
+          <div class="col">
+            <h4>Categoría</h4>
+            <select
+              name="categorias"
+              id="categoriasFiltro"
+              onchange="modificarMarcas()"
+            >
+              <option selected value="todas">Todas</option>
+              <option value="smartphones">Smartphones</option>
+              <option value="laptops">Portátiles</option>
+              <option value="fragrances">Colonias</option>
+              <option value="skincare">Cremas</option>
+              <option value="groceries">Alimentos</option>
+              <option value="home">Hogar</option>
+            </select>
+          </div>
+          <div class="col">
+            <h4>Marca</h4>
+            <select name="marcas" id="marcasFiltro">
+              <option selected value="todas">Todas</option>
+              <option value="Apple">Apple</option>
+              <option value="Samsung">Samsung</option>
+              <option value="OPPO">OPPO</option>
+              <option value="Huawei">Huawei</option>
+              <option value="Microsoft Surface">Microsoft Surface</option>
+              <option value="Infinix">Infinix</option>
+              <option value="HP Pavilion">HP Pavilion</option>
+              <option value="Impression of Acqua Di Gio">
+                Impression of Acqua Di Gio
+              </option>
+              <option value="Royal_Mirage">Royal_Mirage</option>
+              <option value="Fog Scent Xpressio">Fog Scent Xpressio</option>
+              <option value="Al Munakh">Al Munakh</option>
+              <option value="Lord - Al-Rehab">Lord - Al-Rehab</option>
+              <option value="L'Oreal Paris">L'Oreal Paris</option>
+              <option value="Hemani Tea">Hemani Tea</option>
+              <option value="Estée Lauder">Estée Lauder</option>
+              <option value="RoC Retinol">RoC Retinol</option>
+              <option value="Saaf & Khaas">Saaf & Khaas</option>
+              <option value="Bake Parlor Big">Bake Parlor Big</option>
+              <option value="Baking Food Items">Baking Food Items</option>
+              <option value="Fauji">Fauji</option>
+              <option value="Dry Rose">Dry Rose</option>
+              <option value="Boho Decor">Boho Decor</option>
+              <option value="Flying Wooden">Flying Wooden</option>
+              <option value="LED Lights">LED Lights</option>
+              <option value="luxury palace">luxury palace</option>
+              <option value="Golden">Golden</option>
+            </select>
+          </div>
+          <div class="col">
+            <h4>Precio</h4>
+            <input
+              type="range"
+              id="rangoPrecio"
+              min="0"
+              max="2800"
+              value="2800"
+              oninput="mostrarPrecio()"
+            />
+            <p>Precio: <output id="valorPrecio">2800</output></p>
+          </div>
+        </div>
+        <div class="row containerMain">
+          <div class="col">
+            <button class="btn btn-outline-success" id="botonFiltrar">
+              Filtrar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row row-cols-2">
+          <div class="col-lg containerMain">
+            <h3>Productos</h3>
+            <div class="row" id="cartas"></div>
+          </div>
+          <div class="col-2 containerMain">
+            <h3>Cesta</h3>
+            <div class="col" id="cesta"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
